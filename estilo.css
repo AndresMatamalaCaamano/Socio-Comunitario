@@ -1,0 +1,672 @@
+/* === GLOBAL === */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === HEADER === */
+header {
+  background-color: rgb(45, 61, 131);
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+.header-wrapper {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+  flex-wrap: nowrap;
+}
+
+.left,
+.right {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.center {
+  position: absolute;
+   left: 50%;
+  order: 1;
+  width: 100%;
+  text-align: center;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.titulo-carrusel{
+  color: #efb810;
+}
+
+
+.logo {
+  width: 90px;
+  height: auto;
+  border-radius: 60px;
+
+}
+
+.center h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff0000, #ffc107, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* === BANNER === */
+.banner {
+  background-image: url("fotos prototipo/autoweek_hotwheels-221.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-shadow: 2px 2px 6px black;
+  display: inline-block;
+}
+
+/* === CATEGORÍAS === */
+.categoria-autos {
+  background-color: rgb(45, 61, 131);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.titulo-categorias {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #efb810;
+}
+
+.categorias-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.categoria-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auto-card {
+  background: gold;
+  padding: 10px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nombre-categoria {
+  font-size: 1.1rem;
+  margin-top: 12px;
+  font-weight: 600;
+   color: #efb810;
+}
+
+.zoom-in-a:hover,
+.zoom-in-b:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px white;
+}
+
+/* === OFERTAS ESTÁTICAS === */
+.ofertas-estaticas {
+  background-color: rgb(45, 61, 131);
+  padding: 40px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tarjeta {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 10px 30px black;
+  transition: transform 0.3s;
+  color: #000;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+}
+
+.contenido-tarjeta {
+  padding: 15px;
+}
+
+.contenido-tarjeta h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.contenido-tarjeta p {
+  font-size: 14px;
+  color: #444;
+}
+
+.contenido-tarjeta a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: crimson;
+  font-weight: bold;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  font-size: 0.9em;
+  color: #000;
+  border-top: 1px solid #ccc;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.footer-columna {
+  text-align: center;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.footer-columna h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-columna a {
+  display: block;
+  margin-bottom: 6px;
+  color: #000;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.footer-columna a:hover {
+  text-decoration: underline;
+}
+
+.iconos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.iconos-sociales img,
+.app-buton img {
+  height: 25px;
+  width: auto;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.iconos-sociales img:hover {
+  transform: scale(1.1);
+}
+
+.footer-boton {
+  text-align: center;
+  font-size: 0.8em;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+}
+
+.footer-boton a {
+  margin: 0 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-boton a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.sobre-nosotros-box {
+  max-width: 300px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* === EFECTO FADE-IN === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.9s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* === MEDIA QUERIES === */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.img-section {
+  flex: 0 0 40%;
+}
+
+
+.thumbs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumb {
+  width: 30%;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.info-section {
+  flex: 1 1 50%;
+}
+
+#modalPrice {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+.boton-carta {
+  background-color: #FFD700;
+  color: #d40000;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* === RESPONSIVE ADAPTATIONS === */
+@media (max-width: 500px) {
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-columna {
+    min-width: 100%;
+    max-width: 90%;
+  }
+
+  .footer-logo {
+    margin: 0 auto;
+  }
+
+  .center h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .titulo-categorias {
+    font-size: 1.5rem;
+  }
+
+  .auto-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contenido-tarjeta {
+    padding: 10px;
+  }
+
+  .contenido-tarjeta h3 {
+    font-size: 16px;
+  }
+
+  .contenido-tarjeta p {
+    font-size: 13px;
+  }
+
+  .header-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .left,
+  .right {
+    width: auto;
+    justify-content: center;
+  }
+
+   .logo {
+    max-height: 90px;
+    
+  }
+
+  .center {
+    position: static;
+    transform: none;
+    text-align: center;
+  }
+
+  .categorias-container,
+  .tarjetas-container,
+  .ofertas-estaticas {
+    flex-direction:row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .center h1 {
+    font-size: 1.3rem;
+  }
+
+  .banner h2 {
+    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .auto-card {
+    width: 90px;
+    height: 90px;
+  }
+
+  .nombre-categoria {
+    font-size: 1rem;
+  }
+
+  .tarjeta {
+    width: 40%;
+  }
+
+  .contenido-tarjeta h3 {
+    font-size: 15px;
+  }
+
+  .contenido-tarjeta p {
+    font-size: 12px;
+  }
+
+  .footer-logo {
+    width: 60px;
+  }
+
+  .footer-columna h4 {
+    font-size: 1rem;
+  }
+
+  .footer-columna a {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+@media screen and (max-width:600px){
+  .modal-content{
+    width: 95%;
+  }
+
+  .modal-thumbs{
+    width: 50px;
+    height: 50px;
+  }
+
+  .close{
+    top:10px;
+    right: 20px;
+    font-size: 32px;
+  }
+
+}
+
+@media screen and (max-width: 600px){
+
+  .modal-content{
+    width: 95%;
+    margin-top: 60px;
+  }
+
+  .close{
+    font-size:30px;
+    top:5px;
+    right: 10px;
+  }
+
+
+}
+
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  margin: 0 auto;
+  overflow: hidden;
+  animation: fadeInUp 3s ease both;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel:hover {
+  transform: scale(1.0);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.15);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button:hover {
+  background-color: #ffcc80;
+  color: #000;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  z-index: 10;
+}
+
+.carousel-indicators .dot {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.carousel-indicators .dot.active {
+  background-color: #ffcc80;
+}
+
+.carousel-indicators .dot:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    aspect-ratio: 16 / 9;
+  }
+
+  button.prev, button.next {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    aspect-ratio: 4 / 3;
+  }
+
+  button.prev, button.next {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
