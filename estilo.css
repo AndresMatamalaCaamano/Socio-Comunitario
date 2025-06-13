@@ -541,6 +541,17 @@ footer {
     font-size: 32px;
   }
 
+  modal-body {
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-section,
+.info-section {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
 }
 
 @media screen and (max-width: 600px){
@@ -564,9 +575,9 @@ footer {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 750px;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 30 / 27;
   margin: 0 auto;
   overflow: hidden;
   animation: fadeInUp 3s ease both;
@@ -597,10 +608,6 @@ footer {
   border-radius: 8px;
 }
 
-.slide img:hover {
-  transform: scale(1.05);
-}
-
 button.prev, button.next {
   position: absolute;
   top: 50%;
@@ -625,11 +632,12 @@ button:hover {
 }
 
 .carousel-indicators {
+  margin-bottom: 7px;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 10px 0;
   z-index: 10;
+  position: relative;
 }
 
 .carousel-indicators .dot {
@@ -662,7 +670,7 @@ button:hover {
 
 @media (max-width: 480px) {
   .carousel {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 30 / 27;
   }
 
   button.prev, button.next {
