@@ -97,3 +97,35 @@ document.querySelectorAll('.carousel-section').forEach(section => {
     updateCarousel();
   });
 });
+
+
+document.getElementById('filtroCategorias').addEventListener('change', function () {
+  const categoriaSeleccionada = this.value;
+  const secciones = document.querySelectorAll('section');
+
+  secciones.forEach(seccion => {
+    const tarjetas = seccion.querySelectorAll('.tarjeta');
+    let tieneTarjetasVisibles = false;
+
+    tarjetas.forEach(tarjeta => {
+      const categoria = tarjeta.getAttribute('data-categoria');
+      const debeMostrar = categoriaSeleccionada === 'todas' || categoria === categoriaSeleccionada;
+
+      if (debeMostrar) {
+        tarjeta.classList.remove('oculta');
+        setTimeout(() => tarjeta.classList.remove('ocultando'), 10);
+        tieneTarjetasVisibles = true;
+      } else {
+        tarjeta.classList.add('ocultando');
+        setTimeout(() => tarjeta.classList.add('oculta'), 400);
+      }
+    });
+
+    // Oculta o muestra la sección completa
+    if (tieneTarjetasVisibles) {
+      seccion.style.display = '';
+    } else {
+      seccion.style.display = 'none';
+    }
+  });
+});

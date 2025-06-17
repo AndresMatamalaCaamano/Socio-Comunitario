@@ -15,7 +15,7 @@ img {
 
 /* === HEADER === */
 header {
- background-color: rgb(45, 61, 131);
+ background-color: #4e4e4e;
  border-bottom: 1px solid #ccc;
   padding: 10px 0;
   z-index: 1000;
@@ -84,9 +84,73 @@ header {
 }
 
 
+.categoria-autos {
+  background-color: #4e4e4e;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.titulo-categorias {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #efb810;
+}
+
+.categorias-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.categoria-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auto-card {
+  background: gold;
+  padding: 10px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nombre-categoria {
+  font-size: 1.1rem;
+  margin-top: 12px;
+  font-weight: 600;
+   color: #efb810;
+}
+
+.zoom-in-a:hover,
+.zoom-in-b:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px white;
+}
+
+
 /* === OFERTAS ESTÁTICAS === */
 .ofertas-estaticas {
-  background-color: rgb(45, 61, 131);
+  background-color: #4e4e4e;
   
   padding: 40px 10px;
   text-align: center;
@@ -116,6 +180,7 @@ header {
 
 .tarjeta img {
   width: 100%;
+  height: 350px;
 }
 
 .contenido-tarjeta {
@@ -273,7 +338,7 @@ footer {
   align-items: center;
   gap: 10px;
   padding: 20px;
-  background-color: rgb(45, 61, 131);
+  background-color: #4e4e4e;
 }
 
 .boton-filtro {
@@ -369,6 +434,41 @@ footer {
   margin-top: 20px;
 }
 
+
+.tarjeta {
+  opacity: 1;
+  transform: scale(1);
+  height: auto;
+  margin: 10px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.tarjeta.ocultando {
+  opacity: 0;
+  transform: scale(0.95);
+  height: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.tarjeta.oculta {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.section-fija {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /* === RESPONSIVE ADAPTATIONS === */
 @media (max-width: 500px) {
   .footer-contenido {
@@ -444,6 +544,12 @@ footer {
     flex-direction:row;
     align-items: center;
   }
+
+  .tarjeta img {
+  width: 750px;
+  height: 100%;
+}
+
 }
 
 @media (max-width: 1000px) {
@@ -491,13 +597,16 @@ footer {
 }
 
 
-
-
-
 @media (max-width: 500px) {
   .modal-body {
     flex-direction: column;
     align-items: center;
+  }
+
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 15px;
   }
 
   .img-section, .info-section {
