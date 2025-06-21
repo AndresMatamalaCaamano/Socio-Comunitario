@@ -18,43 +18,67 @@
 
 
   const modal = document.getElementById("modal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalDesc = document.getElementById("modalDesc");
-  const modalPrice = document.getElementById("modalPrice");
-  const mainImg = document.getElementById("mainImg");
-  const thumb1 = document.getElementById("thumb1");
-  const thumb2 = document.getElementById("thumb2");
-  const thumb3 = document.getElementById("thumb3");
-  const closeModal = document.getElementById("closeModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const modalPrice = document.getElementById("modalPrice");
+const mainImg = document.getElementById("mainImg");
+const thumb1 = document.getElementById("thumb1");
+const thumb2 = document.getElementById("thumb2");
+const thumb3 = document.getElementById("thumb3");
+const closeModal = document.getElementById("closeModal");
 
-  const buttons = document.querySelectorAll(".open-modal");
+const buttons = document.querySelectorAll(".open-modal");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      modalTitle.textContent = button.getAttribute("data-title");
-      modalDesc.textContent = button.getAttribute("data-desc");
-      modalPrice.textContent = button.getAttribute("data-price");
-      mainImg.src = button.getAttribute("data-img");
-      thumb1.src = button.getAttribute("data-thumb1");
-      thumb2.src = button.getAttribute("data-thumb2");
-      thumb3.src = button.getAttribute("data-thumb3");
-      modal.style.display = "flex";
-    });
+let zoomActivated = false;
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    modalTitle.textContent = button.getAttribute("data-title");
+    modalDesc.textContent = button.getAttribute("data-desc");
+    modalPrice.textContent = button.getAttribute("data-price");
+    mainImg.src = button.getAttribute("data-img");
+    thumb1.src = button.getAttribute("data-thumb1");
+    thumb2.src = button.getAttribute("data-thumb2");
+    thumb3.src = button.getAttribute("data-thumb3");
+    modal.style.display = "flex";
+
+    mainImg.onload = () => {
+      activateZoom();
+    };
+  });
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", e => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+function changeMainImg(el) {
+  mainImg.src = el.src;
+}
+
+function activateZoom() {
+  if (zoomActivated) return;
+  zoomActivated = true;
+
+  const wrapper = document.querySelector(".main-img-wrapper");
+
+  wrapper.addEventListener("mousemove", function (e) {
+    const rect = wrapper.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    mainImg.style.transformOrigin = `${x}% ${y}%`;
+    mainImg.style.transform = "scale(2)";
   });
 
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
+  wrapper.addEventListener("mouseleave", function () {
+    mainImg.style.transform = "scale(1)";
+    mainImg.style.transformOrigin = "center center";
   });
-
-  window.addEventListener("click", e => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-
-  function changeMainImg(el) {
-    mainImg.src = el.src;
-
-    
-  }
+}
 
 document.querySelectorAll('.carousel-section').forEach(section => {
   const carousel = section.querySelector('.carousel');
