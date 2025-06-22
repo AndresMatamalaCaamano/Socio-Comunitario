@@ -17,7 +17,7 @@
   elementos.forEach(el => observer.observe(el));
 
 
-  const modal = document.getElementById("modal");
+const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
 const modalPrice = document.getElementById("modalPrice");
@@ -34,7 +34,7 @@ let zoomActivated = false;
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     modalTitle.textContent = button.getAttribute("data-title");
-    modalDesc.textContent = button.getAttribute("data-desc");
+    modalDesc.innerHTML = button.getAttribute("data-desc").replace(/\\n/g, "<br>");
     modalPrice.textContent = button.getAttribute("data-price");
     mainImg.src = button.getAttribute("data-img");
     thumb1.src = button.getAttribute("data-thumb1");
